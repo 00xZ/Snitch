@@ -62,5 +62,7 @@ else
 fi
 uniq output/$domain/raw_urls.txt | sort >> output/$domain/all_urls.txt
 rm output/$domain/raw_urls.txt
+uniq output/$domain/all_urls.txt | grep ".js" | sort > output/$domain/javascript.txt
+cat output/$domain/all_urls.txt | grep "id=" > output/$domain/id_inputs.txt
 
 echo "Done"
